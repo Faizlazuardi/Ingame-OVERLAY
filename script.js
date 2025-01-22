@@ -20,6 +20,15 @@ function UpdateTeamName() {
     });
 }
 
+// Fungsi untuk memuat logo tim dari file lokal
+document.querySelectorAll('.file-logo').forEach(input => {
+    input.addEventListener('change', function(event) {
+        const imgId = input.id.replace('file-logo-', 'logo-');
+        const img = document.getElementById(imgId);
+        img.src = URL.createObjectURL(event.target.files[0]);
+    });
+});
+
 // Fungsi stopwatch
 const display = document.getElementById("timestamp");
 let timer = null;
@@ -91,17 +100,17 @@ async function fetchExcelData() {
         const redTeam = sheet[2];  // Baris ke-3 di Excel (index 2)
 
         // Update HTML elements with Excel data
-        document.querySelector('.gold-1').innerText = blueTeam[1];  // Kolom B
-        document.querySelector('.poin-1').innerText = blueTeam[2];  // Kolom C
-        document.querySelector('.turet-1').innerText = blueTeam[3]; // Kolom D
-        document.querySelector('.turtle-1').innerText = blueTeam[4];// Kolom E
-        document.querySelector('.lord-1').innerText = blueTeam[5];  // Kolom F
+        document.querySelector('.gold-poin-1').innerText = blueTeam[1];  // Kolom B
+        document.querySelector('.kill-poin-1').innerText = blueTeam[2];  // Kolom C
+        document.querySelector('.turet-poin-1').innerText = blueTeam[3]; // Kolom D
+        document.querySelector('.turtle-poin-1').innerText = blueTeam[4];// Kolom E
+        document.querySelector('.lord-poin-1').innerText = blueTeam[5];  // Kolom F
 
-        document.querySelector('.gold-2').innerText = redTeam[1];
-        document.querySelector('.poin-2').innerText = redTeam[2];
-        document.querySelector('.turet-2').innerText = redTeam[3];
-        document.querySelector('.turtle-2').innerText = redTeam[4];
-        document.querySelector('.lord-2').innerText = redTeam[5];
+        document.querySelector('.gold-poin-2').innerText = redTeam[1];
+        document.querySelector('.kill-poin-2').innerText = redTeam[2];
+        document.querySelector('.turet-poin-2').innerText = redTeam[3];
+        document.querySelector('.turtle-poin-2').innerText = redTeam[4];
+        document.querySelector('.lord-poin-2').innerText = redTeam[5];
 
     } catch (error) {
         console.error("Error fetching the Excel file:", error);

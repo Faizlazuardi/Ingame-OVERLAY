@@ -25,7 +25,7 @@ body {
     height: 266px;
 }
 
-.main-logo{
+.main-logo {
     display: flex;
     justify-content: center;
 }
@@ -39,21 +39,22 @@ body {
     border-bottom: 30px solid transparent;
 }
 
-.logo{
-    width: 130px;
-    z-index: 2;
+.logo {
+    width: 80px;
+    padding-top: 25px;
     position: absolute;
 }
 
 .sponsor {
     width: 261px;
-    height: 80px;
+    height: 90px;
     background-image: linear-gradient(to right, rgba(121, 24, 132, 1), rgba(40, 29, 96, 1));
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     align-items: center;
 }
-.sponsor img{
+
+.sponsor img {
     height: 55px;
 }
 
@@ -63,7 +64,7 @@ body {
     grid-template-areas: "turtle-1 lord-1 turet-1 gold-1 poin-1 time poin-2 gold-2 turet-2 lord-2 turtle-2"
                          "info-1 info-1 info-1 info-1 empty empty empty info-2 info-2 info-2 info-2";
     grid-template-rows: 50px 40px;
-    grid-template-columns: 75px 40px 40px 90px 50px 125px 50px 90px 40px 40px 75px;
+    grid-template-columns: 85px 50px 50px 60px 50px 125px 50px 60px 50px 50px 85px;
     background-image: linear-gradient(to right, rgba(121, 24, 132, 1), rgba(40, 29, 96, 1), rgba(121, 24, 132, 1));
 }
 
@@ -92,35 +93,59 @@ body {
 .turtle-1 {
     padding-left: 35px;
     grid-area: turtle-1;
+    display: flex;
+    gap: 10px;
 }
 
 .turtle-2 {
     padding-right: 35px;
     grid-area: turtle-2;
+    display: flex;
+    gap: 10px;
+    flex-direction: row-reverse;
 }
 
 .lord-1 {
     grid-area: lord-1;
+    display: flex;
+    gap: 5px;
 }
 
 .lord-2 {
     grid-area: lord-2;
+    display: flex;
+    gap: 5px;
+    flex-direction: row-reverse;
 }
 
 .turet-1 {
     grid-area: turet-1;
+    display: flex;
+    gap: 5px;
 }
 
 .turet-2 {
     grid-area: turet-2;
+    display: flex;
+    gap: 5px;
+    flex-direction: row-reverse;
 }
 
 .gold-1 {
     grid-area: gold-1;
+    display: flex;
+    gap: 5px;
 }
 
 .gold-2 {
     grid-area: gold-2;
+    display: flex;
+    gap: 5px;
+    flex-direction: row-reverse;
+}
+
+.icon {
+    width: 20px;
 }
 
 .team-info-1 {
@@ -174,7 +199,7 @@ body {
     border: 1px solid #ddd;
 }
 
-.teams{
+.teams {
     padding: 8px;
     border-radius: 4px;
     border: 1px solid #ddd;
