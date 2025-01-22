@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link href="style.css" rel="stylesheet">
+    <!--Javascript-->
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <title>OVERLAY INGAME</title>
+</head>
+<body>
+    <div class="container">
+        <div class="map"></div>
+        <div class="main-logo">
+            <img class="logo" id="logo-1" src="/Assets/Other/kentang_main.png" alt="Logo Red">
+            <div class="back-logo"></div>
+        </div>
+        
+        <div class="info-container">
+            <h2 class="time" id="timestamp">00:00</h2>
+            <h2 class="turtle-1">0</h2>
+            <h2 class="turtle-2">0</h2>
+            <h2 class="lord-1">0</h2>
+            <h2 class="lord-2">0</h2>
+            <h2 class="turet-1">0</h2>
+            <h2 class="turet-2">0</h2>
+            <h2 class="gold-1">0</h2>
+            <h2 class="gold-2">0</h2>
+            <h2 class="poin-1">0</h2>
+            <h2 class="poin-2">0</h2>
+            <div class="team-info-1">
+                <h1 class="team-name-display" id="team-name-display-1"></h1>
+                <div class="team-win-bar">
+                    <div class="win-bar">
+                        <img class="extraImage" id="extraImage-3" src="Assets/Other/win.png" alt="Extra Image 3">
+                    </div>
+                    
+                    <div class="win-bar">
+                        <img class="extraImage" id="extraImage-2" src="Assets/Other/win.png" alt="Extra Image 2">
+                    </div>
+                    
+                    <div class="win-bar">
+                        <img class="extraImage" id="extraImage-1" src="Assets/Other/win.png" alt="Extra Image 1">
+                    </div>
+                </div>
+            </div>
+            <div class="team-info-2">
+                <div class="team-win-bar">
+                    <div class="win-bar">
+                        <img class="extraImage" id="extraImage-4" src="Assets/Other/win.png" alt="Extra Image 4">
+                    </div>
+                    
+                    <div class="win-bar">
+                        <img class="extraImage" id="extraImage-5" src="Assets/Other/win.png" alt="Extra Image 5">
+                    </div>
+                    
+                    <div class="win-bar">
+                        <img class="extraImage" id="extraImage-6" src="Assets/Other/win.png" alt="Extra Image 6">
+                    </div>
+                </div>
+                <h1 class="team-name-display" id="team-name-display-2"></h1>
+            </div>
+            <div class="empty"></div>
+        </div>
+        <div class="main-logo">
+            <img class="logo" id="logo-2" src="Assets/Other/kentang_main.png" alt="Logo Red">
+            <div class="back-logo"></div>
+        </div>
+        <div class="sponsor">
+            <img src="Assets/Other/Logo Binus University.png" alt="">
+            <img src="Assets/Other/Logo Binusian Gaming Petak-01.png" alt="">
+        </div>
+    </div>
+    <div class="control-panel">
+        <div class="panel">
+            <label class="team-label"><h2>Blue Team</h2>
+                <input class="teams" id="team-1" type="text" maxlength="12" placeholder="Enter team name">
+            </label>
+            <div class="checkbox-container">
+                <h2>Blue Win</h2>
+                <label class="win-label">
+                    <input class="win-check" id="win-check-1" type="checkbox" unchecked>1
+                </label>
+                <label class="win-label">
+                    <input class="win-check" id="win-check-2" type="checkbox" unchecked>2
+                </label>
+                <label class="win-label">
+                    <input class="win-check" id="win-check-3" type="checkbox" unchecked>3
+                </label>
+            </div>
+        </div>
+        <div class="timer">
+            <h2>Timer</h2>
+            <button class="button" id="start-btn">Start</button>
+            <button class="button" id="stop-btn">Stop</button>
+            <button class="button" id="reset-btn">Reset</button>
+        </div>
+        <div class="panel">
+            <label class="team-label"><h2>Blue Team</h2>
+                <input class="teams" id="team-2" type="text" maxlength="12" placeholder="Enter team name">
+            </label>
+            <div class="checkbox-container">
+                <h2>Red Win</h2>
+                <label class="win-label">
+                    <input class="win-check" id="win-check-4" type="checkbox" unchecked>1
+                </label>
+                <label class="win-label">
+                    <input class="win-check" id="win-check-5" type="checkbox" unchecked>2
+                </label>
+                <label class="win-label">
+                    <input class="win-check" id="win-check-6" type="checkbox" unchecked>3
+                </label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
