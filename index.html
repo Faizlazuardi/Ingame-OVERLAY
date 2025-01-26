@@ -8,14 +8,15 @@
     <!--Javascript-->
     <script src="script.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    <title>OVERLAY INGAME</title>
+    <title>MLBB OVERLAY INGAME</title>
 </head>
 <body>
-    <div class="container">
+    <div class="overlay">
         <div class="map"></div>
+
         <div class="main-logo">
             <img class="logo" id="logo-1" src="Assets/Other/80x80.png" alt="Logo Red">
-            <div class="back-logo"></div>
+            <div class="backround-logo"></div>
         </div>
         
         <div class="info-container">
@@ -60,44 +61,44 @@
                 <div class="icon-container">
                     <img class="icon" src="Assets/Other/gold icon.png" alt="turtle">
                 </div>
-                <p class="gold-poin-1">0</p>
+                <p class="gold-poin-1">00,0</p>
             </div>
             <div class="gold-2">
                 <div class="icon-container">
                     <img class="icon" src="Assets/Other/gold icon.png" alt="turtle">
                 </div>
-                <p class="gold-poin-2">0</p>
+                <p class="gold-poin-2">00,0</p>
             </div>
             <h2 class="kill-poin-1">0</h2>
             <h2 class="kill-poin-2">0</h2>
             <div class="team-info-1">
                 <h1 class="team-name-display" id="team-name-display-1"></h1>
-                <div class="team-win-bar">
-                    <div class="win-bar">
-                        <img class="extraImage" id="extraImage-3" src="Assets/Other/win.png" alt="Extra Image 3">
+                <div class="team-score-indicator">
+                    <div class="score-indicator">
+                        <img class="win-icon" id="win-icon-3" src="Assets/Other/win.png" alt="Extra Image 3">
                     </div>
                     
-                    <div class="win-bar">
-                        <img class="extraImage" id="extraImage-2" src="Assets/Other/win.png" alt="Extra Image 2">
+                    <div class="score-indicator">
+                        <img class="win-icon" id="win-icon-2" src="Assets/Other/win.png" alt="Extra Image 2">
                     </div>
                     
-                    <div class="win-bar">
-                        <img class="extraImage" id="extraImage-1" src="Assets/Other/win.png" alt="Extra Image 1">
+                    <div class="score-indicator">
+                        <img class="win-icon" id="win-icon-1" src="Assets/Other/win.png" alt="Extra Image 1">
                     </div>
                 </div>
             </div>
             <div class="team-info-2">
-                <div class="team-win-bar">
-                    <div class="win-bar">
-                        <img class="extraImage" id="extraImage-4" src="Assets/Other/win.png" alt="Extra Image 4">
+                <div class="team-score-indicator">
+                    <div class="score-indicator">
+                        <img class="win-icon" id="win-icon-4" src="Assets/Other/win.png" alt="Extra Image 4">
                     </div>
                     
-                    <div class="win-bar">
-                        <img class="extraImage" id="extraImage-5" src="Assets/Other/win.png" alt="Extra Image 5">
+                    <div class="score-indicator">
+                        <img class="win-icon" id="win-icon-5" src="Assets/Other/win.png" alt="Extra Image 5">
                     </div>
                     
-                    <div class="win-bar">
-                        <img class="extraImage" id="extraImage-6" src="Assets/Other/win.png" alt="Extra Image 6">
+                    <div class="score-indicator">
+                        <img class="win-icon" id="win-icon-6" src="Assets/Other/win.png" alt="Extra Image 6">
                     </div>
                 </div>
                 <h1 class="team-name-display" id="team-name-display-2"></h1>
@@ -106,7 +107,7 @@
         </div>
         <div class="main-logo">
             <img class="logo" id="logo-2" src="Assets/Other/80x80.png" alt="Logo Red">
-            <div class="back-logo"></div>
+            <div class="backround-logo"></div>
         </div>
         <div class="sponsor">
             <img src="Assets/Other/Logo Binus University.png" alt="">
@@ -114,51 +115,60 @@
         </div>
     </div>
     <div class="control-panel">
-        <div class="panel">
-            <label class="team-label"><h2>Blue Team</h2>
-                <input class="teams" id="team-1" type="text" maxlength="12" placeholder="Enter team name">
-            </label>
-            <div class="checkbox-container">
-                <h2>Blue Win</h2>
-                <label class="win-label">
-                    <input class="win-check" id="win-check-1" type="checkbox" unchecked>1
-                </label>
-                <label class="win-label">
-                    <input class="win-check" id="win-check-2" type="checkbox" unchecked>2
-                </label>
-                <label class="win-label">
-                    <input class="win-check" id="win-check-3" type="checkbox" unchecked>3
-                </label>
-            </div>
-            <label class="logo-label"><h2>Team Logo</h2>
-                <input class="file-logo" id="file-logo-1" type="file" accept="image/*">
-            </label>
+        <h1 class="title">Match Settings</h1>
+        
+        <div class="all-button">
+            <button class="control-button" id="switch-team">Switch Team</button>
+            <button class="control-button" id="reset-team">Reset Team</button>
         </div>
-        <div class="timer">
-            <h2>Timer</h2>
-            <button class="button" id="start-btn">Start</button>
-            <button class="button" id="stop-btn">Stop</button>
-            <button class="button" id="reset-btn">Reset</button>
-        </div>
-        <div class="panel">
-            <label class="team-label"><h2>Blue Team</h2>
-                <input class="teams" id="team-2" type="text" maxlength="12" placeholder="Enter team name">
-            </label>
-            <div class="checkbox-container">
-                <h2>Red Win</h2>
-                <label class="win-label">
-                    <input class="win-check" id="win-check-4" type="checkbox" unchecked>1
+        
+        <div class="all-inputs">
+            <div class="team-input-container">
+                <label class="team-label"><h2>Blue Team</h2>
+                    <input class="teams" id="team-1" type="text" placeholder="Enter team name">
                 </label>
-                <label class="win-label">
-                    <input class="win-check" id="win-check-5" type="checkbox" unchecked>2
+                <label class="logo-label"><h2>Team Logo</h2>
+                    <input class="file-logo" id="file-logo-1" type="file" accept="image/*">
                 </label>
-                <label class="win-label">
-                    <input class="win-check" id="win-check-6" type="checkbox" unchecked>3
-                </label>
+                <div class="checkbox-container">
+                    <h2>Win Check</h2>
+                    <label class="win-label">
+                        <input class="win-check" id="win-check-1" type="checkbox" unchecked>1
+                    </label>
+                    <label class="win-label">
+                        <input class="win-check" id="win-check-2" type="checkbox" unchecked>2
+                    </label>
+                    <label class="win-label">
+                        <input class="win-check" id="win-check-3" type="checkbox" unchecked>3
+                    </label>
+                </div>
             </div>
-            <label class="logo-label"><h2>Team Logo</h2>
-                <input class="file-logo" id="file-logo-2" type="file" accept="image/*">
-            </label>
+            <div class="timer">
+                <h2>Timer</h2>
+                <button class="time-button" id="start-btn">Start</button>
+                <button class="time-button" id="stop-btn">Stop</button>
+                <button class="time-button" id="reset-btn">Reset</button>
+            </div>
+            <div class="team-input-container">
+                <label class="team-label"><h2>Red Team</h2>
+                    <input class="teams" id="team-2" type="text" placeholder="Enter team name">
+                </label>
+                <label class="logo-label"><h2>Team Logo</h2>
+                    <input class="file-logo" id="file-logo-2" type="file" accept="image/*">
+                </label>
+                <div class="checkbox-container">
+                    <h2>Win Check</h2>
+                    <label class="win-label">
+                        <input class="win-check" id="win-check-4" type="checkbox" unchecked>1
+                    </label>
+                    <label class="win-label">
+                        <input class="win-check" id="win-check-5" type="checkbox" unchecked>2
+                    </label>
+                    <label class="win-label">
+                        <input class="win-check" id="win-check-6" type="checkbox" unchecked>3
+                    </label>
+                </div>
+            </div>
         </div>
     </div>
 </body>

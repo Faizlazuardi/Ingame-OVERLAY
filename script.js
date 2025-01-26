@@ -1,8 +1,58 @@
+// Fungsi untuk menukar semua (nama tim, gambar tim, dan status checkbox 1-3 dengan 4-6)
+document.getElementById('switch-team').addEventListener('click', function() {
+    // Tukar nama tim
+    const team1 = document.getElementById('team-1');
+    const team2 = document.getElementById('team-2');
+    [team1.value, team2.value] = [team2.value, team1.value];
+    UpdateTeamName();
+    
+    // Tukar gambar utama
+    const img1 = document.getElementById('logo-1');
+    const img2 = document.getElementById('logo-2');
+    [img1.src, img2.src] = [img2.src, img1.src];
+    
+    // Tukar status checkbox dan visibilitas gambar tambahan
+    for (let i = 1; i <= 3; i++) {
+        const checkbox1 = document.getElementById(`win-check-${i}`);
+        const checkbox2 = document.getElementById(`win-check-${i + 3}`);
+        const winIcon1 = document.getElementById(`win-icon-${i}`);
+        const winIcon2 = document.getElementById(`win-icon-${i + 3}`);
+        
+        // Tukar status checkbox
+        [checkbox1.checked, checkbox2.checked] = [checkbox2.checked, checkbox1.checked];
+        
+        // Tukar tampilan gambar berdasarkan checkbox
+        winIcon1.style.display = checkbox1.checked ? "block" : "none";
+        winIcon2.style.display = checkbox2.checked ? "block" : "none";
+    }
+});
+
+// Fungsi untuk mereset logo, nama tim, nama pemain, dan checkbox ke kondisi awal
+document.getElementById('reset-team').addEventListener('click', function(){
+    //reset nama team
+    document.getElementById('team-1').value = "Team 1";
+    document.getElementById('team-2').value = "Team 2";
+    UpdateTeamName();
+    
+    // reset logo
+    document.getElementById('logo-1').src = "Assets/Other/80x80.png";
+    document.getElementById('logo-2').src = "Assets/Other/80x80.png";
+    
+    document.getElementById('file-logo-1').value = "";
+    document.getElementById('file-logo-2').value = "";
+    
+    // Reset checkbox dan gambar tambahan
+    for (let i = 1; i <= 6; i++) {
+        document.getElementById(`win-check-${i}`).checked = false;
+        document.getElementById(`win-icon-${i}`).style.display = "none";
+    }
+});
+
 // Fungsi untuk menampilkan atau menyembunyikan gambar berdasarkan checkbox
 const checkboxes = document.querySelectorAll('.win-check')
 checkboxes.forEach(checkbox => {
     checkbox.addEventListener('click', function(){
-        const image = document.getElementById(`extraImage-${checkbox.id.replace('win-check-','')}`);
+        const image = document.getElementById(`win-icon-${checkbox.id.replace('win-check-','')}`);
         image.style.display = checkbox.checked ? "block" : "none";
     })
 });
@@ -36,7 +86,7 @@ let startTime = 0;
 let elapsedTime = 0;
 let isRunning = false;
 
-//start
+//start button
 document.getElementById('start-btn').addEventListener('click',function(){
     if(!isRunning){
         startTime = Date.now() - elapsedTime;
@@ -45,7 +95,7 @@ document.getElementById('start-btn').addEventListener('click',function(){
     }
 });
 
-//stop
+//stop button
 document.getElementById('stop-btn').addEventListener('click',function(){
     if(isRunning){
         clearInterval(timer);
@@ -54,6 +104,7 @@ document.getElementById('stop-btn').addEventListener('click',function(){
     }
 });
 
+//reset button
 document.getElementById('reset-btn').addEventListener('click',function reset(){
     clearInterval(timer);
     startTime = 0;
@@ -117,7 +168,7 @@ async function fetchExcelData() {
     }
 }
 
-// Auto-update every 10 seconds (10000 milliseconds)
+// Auto-update every 1 seconds (1000 milliseconds)
 setInterval(fetchExcelData, 1000);
 
 
