@@ -139,17 +139,19 @@ async function fetchExcelData() {
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
-
+        
         const csvText = await response.text();
-
+        
         // Convert CSV text to array using SheetJS
         const workbook = XLSX.read(csvText, { type: "string" });
         const sheetName = workbook.SheetNames[0];
         const sheet = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], { header: 1 });
-
+        
         const blueTeam = sheet[1]; // Baris ke-2 di Excel (index 1)
         const redTeam = sheet[2];  // Baris ke-3 di Excel (index 2)
-
+        
+        const fixNumberFormat = (value) => value.toString().replace(',', '.').trim();
+        
         // Update HTML elements with Excel data
         document.querySelector('.gold-poin-1').innerText = blueTeam[1];  // Kolom B
         document.querySelector('.kill-poin-1').innerText = blueTeam[2];  // Kolom C
@@ -162,7 +164,7 @@ async function fetchExcelData() {
         document.querySelector('.turet-poin-2').innerText = redTeam[3];
         document.querySelector('.turtle-poin-2').innerText = redTeam[4];
         document.querySelector('.lord-poin-2').innerText = redTeam[5];
-
+        
     } catch (error) {
         console.error("Error fetching the Excel file:", error);
     }
