@@ -133,7 +133,13 @@ async function fetchExcelData() {
         // Mengambil data dari API Express yang dideploy di Vercel
         const response = await fetch('https://ingame-overlay.vercel.app/api/data');
         const data = await response.json();
-
+        
+        if (!response.ok) {
+            const errorText = await response.text();  // Ambil teks respons untuk debugging
+            console.error(`Error from API: ${errorText}`);
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
         const blueTeam = data[0];
         const redTeam = data[1];
         
