@@ -140,13 +140,13 @@ async function fetchExcelData() {
         
         // Update HTML elements dengan data yang diterima
         document.querySelector('.gold-poin-1').innerText = blueTeam['Gold'] + 'K';  // Sesuaikan dengan key CSV
-        document.querySelector('.kill-poin-1').innerText = blueTeam['Kills'];        // Sesuaikan dengan key CSV
+        document.querySelector('.kill-poin-1').innerText = blueTeam['Poin'];        // Sesuaikan dengan key CSV
         document.querySelector('.turet-poin-1').innerText = blueTeam['Turet'];       // Sesuaikan dengan key CSV
         document.querySelector('.turtle-poin-1').innerText = blueTeam['Turtle'];     // Sesuaikan dengan key CSV
         document.querySelector('.lord-poin-1').innerText = blueTeam['Lord'];         // Sesuaikan dengan key CSV
 
         document.querySelector('.gold-poin-2').innerText = redTeam['Gold'] + 'K';
-        document.querySelector('.kill-poin-2').innerText = redTeam['Kills'];
+        document.querySelector('.kill-poin-2').innerText = redTeam['Poin'];
         document.querySelector('.turet-poin-2').innerText = redTeam['Turet'];
         document.querySelector('.turtle-poin-2').innerText = redTeam['Turtle'];
         document.querySelector('.lord-poin-2').innerText = redTeam['Lord'];
