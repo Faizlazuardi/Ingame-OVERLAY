@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link href="style.css" rel="stylesheet">
+    <!--Javascript-->
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <title>MLBB OVERLAY INGAME</title>
+</head>
+<body>
+    <div class="overlay">
+        <div class="map"></div>
+
+        <div class="main-logo">
+            <img class="logo" id="logo-1" src="images/80x80.png" alt="Logo Red">
+            <div class="backround-logo"></div>
+        </div>
+        
+        <div class="info-container">
+            <h2 class="time" id="timestamp">00:00</h2>
+            <div class="turtle-1">
+                <img class="icon" src="images/turtle icon.png" alt="turtle">
+                <p class="turtle-poin-1">0</p>
+            </div>
+            <div class="turtle-2">
+                <img class="icon" src="images/turtle icon.png" alt="turtle">
+                <p class="turtle-poin-2">0</p>
+            </div>
+            <div class="lord-1">
+                <img class="icon" src="images/lord icon.png" alt="turtle">
+                <p class="lord-poin-1">0</p>
+            </div>
+            <div class="lord-2">
+                <img class="icon" src="images/lord icon.png" alt="turtle">
+                <p class="lord-poin-2">0</p>
+            </div>
+            <div class="turet-1">
+                <img class="icon" src="images/turet icon.png" alt="turtle">
+                <p class="turet-poin-1">0</p>
+            </div>
+            <div class="turet-2">
+                <img class="icon" src="images/turet icon.png" alt="turtle">
+                <p class="turet-poin-2">0</p>
+            </div>
+            <div class="gold-1">
+                <img class="icon" src="images/gold icon.png" alt="turtle">
+                <p class="gold-poin-1">000.0K</p>
+            </div>
+            <div class="gold-2">
+                <img class="icon" src="images/gold icon.png" alt="turtle">
+                <p class="gold-poin-2">000.0K</p>
+            </div>
+            <h2 class="kill-poin-1">0</h2>
+            <h2 class="kill-poin-2">0</h2>
+            <div class="team-info-1">
+                <h1 class="team-name-display" id="team-name-display-1"></h1>
+                <div class="team-score-indicator-1">
+                    <img class="win-icon" id="win-icon-1" src="images/win.png" alt="Extra Image 1">
+                    <img class="win-icon" id="win-icon-2" src="images/win.png" alt="Extra Image 2">
+                    <img class="win-icon" id="win-icon-3" src="images/win.png" alt="Extra Image 3">
+                </div>
+            </div>
+            <div class="team-info-2">
+                <h1 class="team-name-display" id="team-name-display-2"></h1>
+                <div class="team-score-indicator-2">
+                    <img class="win-icon" id="win-icon-4" src="images/win.png" alt="Extra Image 4">
+                    <img class="win-icon" id="win-icon-5" src="images/win.png" alt="Extra Image 5">
+                    <img class="win-icon" id="win-icon-6" src="images/win.png" alt="Extra Image 6">
+                </div>
+            </div>
+            <div class="empty"></div>
+        </div>
+        
+        <div class="main-logo">
+            <img class="logo" id="logo-2" src="images/80x80.png" alt="Logo Red">
+            <div class="backround-logo"></div>
+        </div>
+        <div class="sponsor">
+            <img src="images/Logo Binus University.png" alt="">
+            <img src="images/Logo Binusian Gaming Petak-01.png" alt="">
+        </div>
+    </div>
+    <div class="control-panel">
+        <h1 class="title">Match Settings</h1>
+        
+        <div class="all-button">
+            <button class="control-button" id="switch-team">Switch Team</button>
+            <button class="control-button" id="reset-team">Reset Team</button>
+        </div>
+        
+        <div class="all-inputs">
+            <div class="team-input-container">
+                <label class="team-label"><h2>Blue Team</h2>
+                    <input class="teams" id="team-1" type="text" placeholder="Enter team name">
+                </label>
+                <label class="logo-label"><h2>Team Logo</h2>
+                    <input class="file-logo" id="file-logo-1" type="file" accept="image/*">
+                </label>
+                <div class="checkbox-container">
+                    <h2>Win Check</h2>
+                    <label class="win-label">
+                        <input class="win-check" id="win-check-1" type="checkbox" unchecked>
+                    </label>
+                    <label class="win-label">
+                        <input class="win-check" id="win-check-2" type="checkbox" unchecked>
+                    </label>
+                    <label class="win-label">
+                        <input class="win-check" id="win-check-3" type="checkbox" unchecked>
+                    </label>
+                </div>
+            </div>
+            <div class="timer-panel">
+                <h2>Timer</h2>
+                <button class="time-button" id="start-btn">Start</button>
+                <button class="time-button" id="stop-btn">Stop</button>
+                <button class="time-button" id="reset-btn">Reset</button>
+            </div>
+            <div class="team-input-container">
+                <label class="team-label"><h2>Red Team</h2>
+                    <input class="teams" id="team-2" type="text" placeholder="Enter team name">
+                </label>
+                <label class="logo-label"><h2>Team Logo</h2>
+                    <input class="file-logo" id="file-logo-2" type="file" accept="image/*">
+                </label>
+                <div class="checkbox-container">
+                    <h2>Win Check</h2>
+                    <label class="win-label">
+                        <input class="win-check" id="win-check-4" type="checkbox" unchecked>
+                    </label>
+                    <label class="win-label">
+                        <input class="win-check" id="win-check-5" type="checkbox" unchecked>
+                    </label>
+                    <label class="win-label">
+                        <input class="win-check" id="win-check-6" type="checkbox" unchecked>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "mlbb-overlay-ingame",
+  "version": "1.0.0",
+  "description": "alat untuk membantu streaming tournament MOBA saat game berlangsung",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Faizlazuardi/Ingame-OVERLAY.git"
+  },
+  "author": "Faiz Lazuardi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Faizlazuardi/Ingame-OVERLAY/issues"
+  },
+  "homepage": "https://github.com/Faizlazuardi/Ingame-OVERLAY#readme",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "csv-parser": "^3.2.0",
+    "express": "^4.21.2",
+    "stream": "^0.0.3"
+  }
+}
