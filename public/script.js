@@ -134,12 +134,6 @@ async function fetchExcelData() {
         const response = await fetch('https://ingame-overlay.vercel.app/api/data');
         const data = await response.json();
         
-        if (!response.ok) {
-            const errorText = await response.text();  // Ambil teks respons untuk debugging
-            console.error(`Error from API: ${errorText}`);
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        
         const blueTeam = data[0];
         const redTeam = data[1];
         
@@ -149,13 +143,12 @@ async function fetchExcelData() {
         document.querySelector('.turet-poin-1').innerText = blueTeam['Turet'];
         document.querySelector('.turtle-poin-1').innerText = blueTeam['Turtle'];
         document.querySelector('.lord-poin-1').innerText = blueTeam['Lord'];
-
+        
         document.querySelector('.gold-poin-2').innerText = redTeam['Gold'] + 'K';
         document.querySelector('.kill-poin-2').innerText = redTeam['Poin'];
         document.querySelector('.turet-poin-2').innerText = redTeam['Turet'];
         document.querySelector('.turtle-poin-2').innerText = redTeam['Turtle'];
         document.querySelector('.lord-poin-2').innerText = redTeam['Lord'];
-
     } catch (error) {
         console.error("Error fetching the data:", error);
     }

@@ -32,3 +32,8 @@ app.get('/api/data', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch data' });
     }
 });
+
+// Jalankan server
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}/api/data`);
+});
