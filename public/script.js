@@ -134,16 +134,15 @@ async function fetchExcelData() {
         const response = await fetch('https://ingame-overlay.vercel.app/api/data');
         const data = await response.json();
 
-        // Anggap data yang diterima memiliki struktur serupa dengan yang diinginkan
-        const blueTeam = data[1];  // Data untuk tim biru (index 1)
-        const redTeam = data[2];   // Data untuk tim merah (index 2)
+        const blueTeam = data[0];
+        const redTeam = data[1];
         
         // Update HTML elements dengan data yang diterima
-        document.querySelector('.gold-poin-1').innerText = blueTeam['Gold'] + 'K';  // Sesuaikan dengan key CSV
-        document.querySelector('.kill-poin-1').innerText = blueTeam['Poin'];        // Sesuaikan dengan key CSV
-        document.querySelector('.turet-poin-1').innerText = blueTeam['Turet'];       // Sesuaikan dengan key CSV
-        document.querySelector('.turtle-poin-1').innerText = blueTeam['Turtle'];     // Sesuaikan dengan key CSV
-        document.querySelector('.lord-poin-1').innerText = blueTeam['Lord'];         // Sesuaikan dengan key CSV
+        document.querySelector('.gold-poin-1').innerText = blueTeam['Gold'] + 'K';
+        document.querySelector('.kill-poin-1').innerText = blueTeam['Poin'];
+        document.querySelector('.turet-poin-1').innerText = blueTeam['Turet'];
+        document.querySelector('.turtle-poin-1').innerText = blueTeam['Turtle'];
+        document.querySelector('.lord-poin-1').innerText = blueTeam['Lord'];
 
         document.querySelector('.gold-poin-2').innerText = redTeam['Gold'] + 'K';
         document.querySelector('.kill-poin-2').innerText = redTeam['Poin'];
