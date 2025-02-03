@@ -131,10 +131,10 @@ function update(){
 async function fetchExcelData() {
     try {
         // Mengambil data dari API Express yang dideploy di Vercel
-        //const apiUrl = 'https://ingame-overlay.vercel.app/api/data';
+        const apiUrl = 'https://ingame-overlay.vercel.app/api/data';
         
         //menganbil data dari API Express yang dideploy di localhost
-        const apiUrl = 'http://localhost:3000/api/data';
+        //const apiUrl = 'http://localhost:3000/api/data';
         
         const response = await fetch(apiUrl);
         const data = await response.json();
