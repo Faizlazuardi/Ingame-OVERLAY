@@ -35,8 +35,8 @@ document.getElementById('reset-team').addEventListener('click', function(){
     UpdateTeamName();
     
     // reset logo
-    document.getElementById('logo-1').src = "Assets/Other/80x80.png";
-    document.getElementById('logo-2').src = "Assets/Other/80x80.png";
+    document.getElementById('logo-1').src = "images/80x80.png";
+    document.getElementById('logo-2').src = "images/80x80.png";
     
     document.getElementById('file-logo-1').value = "";
     document.getElementById('file-logo-2').value = "";
@@ -131,7 +131,12 @@ function update(){
 async function fetchExcelData() {
     try {
         // Mengambil data dari API Express yang dideploy di Vercel
-        const response = await fetch('https://ingame-overlay.vercel.app/api/data');
+        //const apiUrl = 'https://ingame-overlay.vercel.app/api/data';
+        
+        //menganbil data dari API Express yang dideploy di localhost
+        const apiUrl = 'http://localhost:3000/api/data';
+        
+        const response = await fetch(apiUrl);
         const data = await response.json();
         
         const blueTeam = data[0];

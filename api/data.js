@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const axios = require('axios');
 const csv = require('csv-parser');
 const { Readable } = require('stream');
@@ -6,7 +7,7 @@ const { Readable } = require('stream');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-
+app.use(cors());
 
 // URL spreadsheet dalam format CSV
 const SPREADSHEET_URL = 'https://docs.google.com/spreadsheets/d/1WPZ4gt1uy91khX6W4u1dG1sSdohj4mo1RCx0zoLatq4/export?format=csv&gid=0';
