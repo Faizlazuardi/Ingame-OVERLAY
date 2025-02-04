@@ -117,23 +117,23 @@ function update(){
     
     const currentTime = Date.now();
     elapsedTime = currentTime - startTime;
-
+    
     let minutes = Math.floor(elapsedTime / (1000 * 60) % 60);
     let seconds = Math.floor(elapsedTime / 1000 % 60);
-
+    
     minutes = String(minutes).padStart(2, "0");
     seconds = String(seconds).padStart(2, "0");
-
+    
     display.textContent = `${minutes}:${seconds}`;
 };
 
 
 async function fetchExcelData() {
     try {
-        // Mengambil data dari API Express yang dideploy di Vercel
+        // fetch API Express on Vercel
         const apiUrl = 'https://ingame-overlay.vercel.app/api/data';
         
-        //menganbil data dari API Express yang dideploy di localhost
+        // fetch API Express on localhost
         //const apiUrl = 'http://localhost:3000/api/data';
         
         const response = await fetch(apiUrl);
@@ -142,7 +142,6 @@ async function fetchExcelData() {
         const blueTeam = data[0];
         const redTeam = data[1];
         
-        // Update HTML elements dengan data yang diterima
         document.querySelector('.gold-poin-1').innerText = blueTeam['Gold'] + 'K';
         document.querySelector('.kill-poin-1').innerText = blueTeam['Poin'];
         document.querySelector('.turet-poin-1').innerText = blueTeam['Turet'];
